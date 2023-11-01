@@ -443,7 +443,7 @@ def get_cmd(
             args.append(f"-b {shlex.quote(host)}")
 
         if nworkers:
-            args.append(f"-w {nworkers}")
+            args.append(f"-w {shlex.quote(nworkers)}")
 
         command = (
             f"gunicorn {' '.join(args)} ${{GUNICORN_CMD_ARGS}}"
